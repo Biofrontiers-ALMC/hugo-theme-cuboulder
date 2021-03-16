@@ -8,6 +8,9 @@ draft: false
 #    "workstation" - Workstations
 equipment: "microscope"
 
+manufacturer: "Nikon"
+model: "Ti-E with Perfect Focus System"
+
 #Microscope metadata
 objectives: ["obj-1", "obj-2"]
 filters: ["cube-1"]
@@ -18,6 +21,7 @@ lightsrcs: []
 ram: "64 gb"
 cpu: "Intel CPU"
 os: "Windows 10"
+
 #List software as a list: ["item1", "item2"]
 software: ["Fiji v1.2", "Elements v1.2.3"]
 

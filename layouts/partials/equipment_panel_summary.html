@@ -13,6 +13,18 @@
         {{- .Scratch.Set "speclist" .Params.lightsrcs -}}
         {{- .Scratch.Set "specicon" "flare" -}}
         {{ partial "list_specs" . }}
+        {{- .Scratch.Set "speclist" .Params.envctrls -}}
+        {{- .Scratch.Set "specicon" "thermostat" -}}
+        {{ partial "list_specs" . }}
+        {{- range $idx, $val := .Params.software -}}
+        <tr>
+            <td>{{- if eq $idx 0 -}}<span class="material-icons">dvr</span>{{- end -}}</td>
+            <td>
+                {{ $val }}
+            </td>
+        </tr>
+
+        {{- end -}}
     </table>
 {{- else -}}
     <table class="table table-borderless">

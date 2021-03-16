@@ -7,7 +7,9 @@ draft: false
 #    "objective" - Objective lenses
 #    "filter" - Filter cubes
 #    "camera" - Cameras
-#    "lightsrc" - Light sources
+#    "light-source" - Light sources
+#    "environmental-controller" - Environmental controller
+
 component: "objective"
 
 #Set manufacturer metadata 
@@ -20,18 +22,17 @@ immersionmedia: "water"
 numericalaperture: "0.65"
 
 #Metadata for filters
-magnification: "20"
-immersionmedia: "water"
-numericalaperture: "0.65"
-
+filtersets: ["DAPI", "GFP", "TRITC", "Cy5", "DIC"]
 
 #Metadata for cameras
-magnification: "20"
-immersionmedia: "water"
-numericalaperture: "0.65"
+sensorsize: 1024x1024
+sensortype: "CMOS"
+sensorpxsize: "3.45 um"
 
 #Metadata for light sources
-magnification: "20"
-immersionmedia: "water"
-numericalaperture: "0.65"
+wavelengths: ["405 nm", "445 nm", "Argon (454, 471, 488, 515 nm)"]
+
+#Metadata for environmental controller
+envcontrols: ["CO2", "Temperature", "Humidity"]
+
 ---
