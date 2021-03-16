@@ -1,3 +1,19 @@
 {{ define "main" }}
-Equipment list
+<div class="container">
+    <h1 class="my-4">{{ .Title }}</h1>
+
+    <h2>Microscopes</h2>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4">
+    {{ .Scratch.Set "taxonomy" "equipment" }}
+    {{ .Scratch.Set "term" "microscope" }}
+    {{ partial "list_card" . }}
+    </div>
+
+    <h2>Workstations</h2>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4">
+    {{ .Scratch.Set "term" "workstation" }}
+    {{ partial "list_card" . }}
+    </div>
+
+</div>
 {{ end }}

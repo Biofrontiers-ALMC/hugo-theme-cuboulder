@@ -1,0 +1,25 @@
+{{- $list := .Scratch.Get "speclist" -}}
+{{- $icon := .Scratch.Get "specicon" -}}
+{{- if $list -}}
+    {{- range $idx, $val := $list -}}
+    <tr>
+        <td>{{- if eq $idx 0 -}}<span class="material-icons">{{$icon}}</span>{{- end -}}</td>
+        <td>
+            {{ $page := site.GetPage (printf "/component/%s" $val) }}
+            <a href="{{ $page.RelPermalink }}" class="text-muted">{{ $page.Title }}</a>
+            ({{ $page.Params.manufacturer }})
+            {{/* Objectives */}}
+            {{- if eq $page.Params.component "objective" -}}
+                {{- $page.Params.magnification -}}
+
+            {{- else if eq $page.Params.component "filter" -}}
+
+            {{- else if eq $page.Params.component "camera" -}}
+
+            {{- else if eq $page.Params.component "lightsrc" -}}
+
+            {{- end -}}
+        </td>
+    </tr>
+    {{- end -}}
+{{- end -}}

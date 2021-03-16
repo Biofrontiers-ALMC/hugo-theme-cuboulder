@@ -4,16 +4,18 @@
 
 {{/* Title and header */}}
 {{- with $featimg -}}
-<div class="d-flex justify-content-center elem-hero" style="background-image: url({{.Permalink}});">
-    <div class="align-self-center p-3" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
-        <h1 class="text-center text-white">{{ $page.Title }}</h1>
+    {{- $scaled := .Fill "1200x700" -}}
+    <div class="d-flex justify-content-center elem-hero" style="background-image: url({{$scaled.Permalink}});">
+        <div class="align-self-center p-3"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
+            <h1 class="text-center text-white">{{ $page.Title }}</h1>
+        </div>
     </div>
-</div>
 {{- else -}}
-<div class="align-self-center mt-5">
-    <h1 class="text-center">{{ $page.Title }}</h1>
-    <p class="text-center fs-4 fw-light">{{ $page.Description }}</p>
-</div>
+    <div class="align-self-center mt-5">
+        <h1 class="text-center">{{ $page.Title }}</h1>
+        <p class="text-center fs-4 fw-light">{{ $page.Description }}</p>
+    </div>
 {{- end -}}
 
 <div class="container mt-5">
@@ -27,16 +29,16 @@
             <h3>{{ dateFormat "January 02, 2006" .Date }}</h3>
             {{- with .Params.authors -}}
             {{- $nauthors := len . -}}
-            <p>By 
+            <p>By
                 {{ range $idx, $name := . -}}
-                    {{- if gt $idx 0 -}}
-                        {{- if lt (add $idx 1) $nauthors -}}
-                        ,
-                        {{ else }}
-                        and
-                        {{ end -}}
-                    {{- end -}}
-                    {{ $name }}
+                {{- if gt $idx 0 -}}
+                {{- if lt (add $idx 1) $nauthors -}}
+                ,
+                {{ else }}
+                and
+                {{ end -}}
+                {{- end -}}
+                {{ $name }}
                 {{- end -}}
             </p>
             {{- end -}}

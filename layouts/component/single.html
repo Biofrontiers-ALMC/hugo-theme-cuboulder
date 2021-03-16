@@ -1,3 +1,39 @@
 {{ define "main" }}
-Equipment main
+<div class="container mt-4">
+    <h1 class="text-center mb-5">{{ .Title }}</h1>
+    <div class="row row-cols-1 row-cols-md-2">
+        {{- with .Resources.ByType "image" -}}
+        <div class="col">
+            {{- range first 1 . -}}
+            <img src="{{ .RelPermalink }}" class="img-fluid">
+            {{- end -}}
+        </div>
+        {{- end -}}
+        <div class="col">
+            <h5 class="mb-4">Specifications</h5>
+            {{/* Objective */}}
+            <p>
+                <b>Magnification:</b> {{ .Params.magnification }}
+            </p>
+            <p>
+                <b>Immersion medium:</b> {{ .Params.immersionmedium }}
+            </p>
+            <p>
+                <b>Numerical aperture:</b> {{ .Params.numericalaperture }}
+            </p>
+            <p>
+                <b>Working distance:</b> {{ .Params.workingdistance }}
+            </p>
+            
+            {{/* Filter cube */}}
+
+
+            {{/* Cameras */}}
+
+
+            {{/* Light sources */}}
+
+        </div>
+    </div>
+</div>
 {{ end }}

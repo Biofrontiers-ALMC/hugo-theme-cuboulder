@@ -1,20 +1,22 @@
 {{ define "main" }}
 <div id="blog-list" class="container my-5">
     {{- range .Pages -}}
-    {{- $page := . -}}
-    <div class="row my-4">
-        <h5>{{ dateFormat "January 02, 2006" .Date }}</h5>
-        <h2><a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h2>
-        {{- with .Resources.GetMatch "featured*" -}}
-        {{- $scaled := .Resize "200x" -}}
-        <div class="col-12 col-md-3">            
-            <a href="{{ $page.RelPermalink }}"><img src="{{ $scaled.RelPermalink }}" class="img-fluid my-auto"></a>
+        <div class="row my-4 blog-list-row p-2">
+            <h5>{{ dateFormat "January 02, 2006" .Date }}</h5>
+            <h2><a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h2>
+            <div class="row row-cols-1 row-cols-md-2">
+                {{- $featimg := .Resources.GetMatch "featured*" -}}
+                {{- if $featimg -}}
+                {{- $scaled := $featimg.Fill "300x200" -}}
+                <div class="col-12 col-md-3">            
+                    <a href="{{ .RelPermalink }}"><img src="{{ $scaled.RelPermalink }}" class="img-fluid my-auto ml-auto"></a>
+                </div>
+                {{- end -}}
+                <div class="col-12 mt-2 col-md-8 mt-md-0">
+                    <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Summary }}</a>
+                </div>
+            </div>
         </div>
         {{- end -}}
-        <div class="col-12 mt-2 col-md-8 mt-md-0">
-            <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Summary }}</a>
-        </div>
     </div>
-    {{- end -}}
-</div>
 {{ end }}

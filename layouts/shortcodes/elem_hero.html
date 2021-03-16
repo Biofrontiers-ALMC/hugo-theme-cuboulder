@@ -10,11 +10,9 @@
 {{- $btn3_value := .Get "btn3text" -}}
 
 <div class="elem-hero w-100" style="background-image: url('{{ $src }}');">
-test
     <div class="d-flex">
         <div class="p-3 w-100 elem-hero-inner my-auto">
             {{ .Inner | markdownify }}
-
             <div class="pt-2">
             {{- if $btn1_href -}}
             <a class="btn btn-primary mx-1" href="{{ $btn1_href }}" role="button">{{ $btn1_value }}</a>

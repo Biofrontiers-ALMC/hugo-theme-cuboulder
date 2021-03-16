@@ -44,21 +44,19 @@ a {
     color: #CFB87C;
 }
 
-.navbar-toggler {
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    border: 0;
-}
-
 .elem-hero {
-    min-height: 250px;
+    min-height: 15em;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #868686;
+    background-size: cover;
 }
 
 .elem-hero .elem-hero-inner {
-    position:relative;
+    position: relative;
     background-color: #1D1E20;
     color: white;
+    top: 1em;
 }
 
 .elem-hero .elem-hero-inner .btn-primary {
@@ -69,7 +67,7 @@ a {
 
 @media (min-width: map-get($grid-breakpoints, "md")) {
     .elem-hero {
-        min-height: 300px;
+        min-height: 15em;
     }
 
     .elem-hero-inner {
@@ -85,11 +83,20 @@ a {
     padding: 10px;
 }
 
-.hover-card:hover {
+.borderless-card:hover {
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
     padding: 10px;
 }
 
 .page-image-caption {
     font-size: small;
+}
+
+.equipment-summary {
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+
+#blog-list .blog-list-row:hover {
+    box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.2);
 }

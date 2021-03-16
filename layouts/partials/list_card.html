@@ -1,0 +1,19 @@
+{{- $taxonomy := .Scratch.Get "taxonomy" -}}
+{{- $term := .Scratch.Get "term" -}}
+
+{{- range where .Site.Pages (printf ".Params.%s" $taxonomy) $term -}}
+{{- $featimg := .Resources.GetMatch "featured*" -}}
+
+<div class="col">
+    <div class="card borderless-card">
+        {{- if $featimg -}}
+        {{- $cropped := $featimg.Fill "200x120" -}}
+        <a href="{{ .RelPermalink }}"><img src="{{ $cropped.RelPermalink }}" class="card-img-top"></a>
+        {{- end -}}
+        <h5 class="mt-2"><a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h5>
+        {{- if not $featimg -}}
+        <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Summary | truncate 150 }}</a>
+        {{- end -}}
+    </div>
+</div>
+{{- end -}}

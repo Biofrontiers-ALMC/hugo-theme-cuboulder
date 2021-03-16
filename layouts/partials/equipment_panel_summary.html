@@ -1,0 +1,35 @@
+<h6 class="text-center">Specifications</h6>
+{{- if eq .Params.equipment "microscope" -}}
+    <table class="table table-borderless align-middle">
+        {{- .Scratch.Set "speclist" .Params.objectives -}}
+        {{- .Scratch.Set "specicon" "lens_blur" -}}
+        {{ partial "list_specs" . }}
+        {{- .Scratch.Set "speclist" .Params.filters -}}
+        {{- .Scratch.Set "specicon" "view_in_ar" -}}
+        {{ partial "list_specs" . }}
+        {{- .Scratch.Set "speclist" .Params.cameras -}}
+        {{- .Scratch.Set "specicon" "videocam" -}}
+        {{ partial "list_specs" . }}
+        {{- .Scratch.Set "speclist" .Params.lightsrcs -}}
+        {{- .Scratch.Set "specicon" "flare" -}}
+        {{ partial "list_specs" . }}
+    </table>
+{{- else -}}
+    <table class="table table-borderless">
+        <tr>
+            {{- with .Params.ram -}}
+            <td style="text-align: right"><b>RAM:</b></td><td>{{ . }}</td>
+            {{- end -}}
+        </tr>
+        <tr>
+            {{- with .Params.cpu -}}
+            <td style="text-align: right"><b>CPU:</b></td><td>{{ . }}</td>
+            {{- end -}}
+        </tr>
+        <tr>
+            {{- with .Params.os -}}
+            <td style="text-align: right"><b>Operating system:</b></td><td>{{ . }}</td>
+            {{- end -}}
+        </tr>
+    </table>
+{{- end -}}

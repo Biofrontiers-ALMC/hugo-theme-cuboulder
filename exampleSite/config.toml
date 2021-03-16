@@ -21,8 +21,22 @@ themesDir = "../.."
 
     [[menu.main]]
         identifier = "resources"
-        name = "Resources"
+        name = "User Resources"
         url = "/resources/"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "page-1"
+        name = "Page 1"
+        parent = "resources"
+        url = "/resources/page-1"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "page-2"
+        name = "Page 2"
+        parent = "resources"
+        url = "/resources/page-2"
         weight = 3
 
     [[menu.main]]
