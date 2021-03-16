@@ -1,0 +1,22 @@
+{{ if not .IsNamedParams }}
+  {{ errorf "Invalid syntax. Buttons must have named parameters." }}
+{{ end }}
+
+{{ if .Get "href" }}
+
+    {{/* Style a link as a button */}}
+  <a class="btn btn-{{ with .Get "theme" }}{{ . }}{{ else }}primary{{ end }}{{ if .Get "state" | eq "disabled" }} disabled{{ end }}{{with .Get "size"}} btn-{{.}}{{end}}" href="{{ .Get "href" }}" role="button">{{ .Get "value" }}</a>
+
+{{ else if .Get "type" }}
+    {{/* Style an input as a button */}}
+    <input class="btn btn-{{ with .Get "theme" }}{{ . }}{{ else }}primary{{ end }}{{with .Get "size"}} btn-{{.}}{{end}}" href="{{ .Get "href" }}" type="{{ .Get "type" }}" value="{{ .Get "value" }}" {{ if .Get "state" | eq "disabled" }}disabled{{ end }}>
+{{ else }}
+
+  {{/* Style a button */}}
+    <button type="button" class="btn btn-{{ with .Get "theme" }}{{ . }}{{ else }}primary{{ end }}{{with .Get "size"}} btn-{{.}}{{end}}" {{ if .Get "state" | eq "disabled" }}disabled{{ end }}>
+        {{ .Get "value" }}
+    </button>
+
+{{ end }}
+
+

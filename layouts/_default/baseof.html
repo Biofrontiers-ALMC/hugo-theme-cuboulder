@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "site_head.html" . -}}
+    <body>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        {{- partial "site_navbar.html" . -}}
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "site_footer.html" . -}}
+    </body>
+</html>

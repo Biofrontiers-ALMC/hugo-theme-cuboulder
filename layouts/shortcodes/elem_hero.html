@@ -1,0 +1,31 @@
+{{- $src := .Get "src" -}}
+
+{{- $btn1_href := .Get "btn1href" -}}
+{{- $btn1_value := .Get "btn1text" -}}
+
+{{- $btn2_href := .Get "btn2href" -}}
+{{- $btn2_value := .Get "btn2text" -}}
+
+{{- $btn3_href := .Get "btn3href" -}}
+{{- $btn3_value := .Get "btn3text" -}}
+
+<div class="elem-hero w-100" style="background-image: url('{{ $src }}');">
+test
+    <div class="d-flex">
+        <div class="p-3 w-100 elem-hero-inner my-auto">
+            {{ .Inner | markdownify }}
+
+            <div class="pt-2">
+            {{- if $btn1_href -}}
+            <a class="btn btn-primary mx-1" href="{{ $btn1_href }}" role="button">{{ $btn1_value }}</a>
+            {{- end -}}
+            {{- if $btn2_href -}}
+            <a class="btn btn-primary mx-1" href="{{ $btn2_href }}" role="button">{{ $btn2_value }}</a>
+            {{- end -}}
+            {{- if $btn3_href -}}
+            <a class="btn btn-primary mx-1" href="{{ $btn3_href }}" role="button">{{ $btn3_value }}</a>
+            {{- end -}}
+            </div>
+        </div>
+    </div>
+</div>

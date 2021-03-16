@@ -1,0 +1,95 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+a {
+    text-decoration: none;
+}
+
+.navbar-top {
+    height: 56px;
+    padding: 0;
+}
+
+.navbar-main {
+    height: 85px;
+}
+
+.navbar-brand {
+    font-size: medium;
+}
+
+.navbar-top-logo {
+    height: 25px;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.site-footer-bar {
+    background-color: black;
+}
+
+#site-footer {
+    color: white;
+    font-size: small;
+}
+
+#site-footer-beboulder {
+    min-width: 1in; 
+    max-width: 300px;
+    padding-bottom: 5px;
+}
+
+#site-footer a {
+    color: #CFB87C;
+}
+
+.navbar-toggler {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: 0;
+}
+
+.elem-hero {
+    min-height: 250px;
+}
+
+.elem-hero .elem-hero-inner {
+    position:relative;
+    background-color: #1D1E20;
+    color: white;
+}
+
+.elem-hero .elem-hero-inner .btn-primary {
+    background-color: #CFB87C;
+    border-color: black;
+    font-weight: bold;
+}
+
+@media (min-width: map-get($grid-breakpoints, "md")) {
+    .elem-hero {
+        min-height: 300px;
+    }
+
+    .elem-hero-inner {
+        max-width: 500px;
+        margin-left: 15%;
+    }
+}
+
+.borderless-card {
+    object-fit: scale-down;
+    border: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+.hover-card:hover {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.page-image-caption {
+    font-size: small;
+}

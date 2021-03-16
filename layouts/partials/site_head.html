@@ -1,0 +1,23 @@
+{{/* Theme styles */}}
+{{- $bootstrap := resources.Get "scss/bootstrap.scss" | resources.ExecuteAsTemplate "bootstrap.scss" . | toCSS | fingerprint -}}
+{{- $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS | minify | fingerprint -}}
+
+{{/* Favicon */}}
+{{- $favicon := resources.GetMatch "favicon*" -}}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <!-- favicon -->
+    {{- with $favicon -}}
+    <link rel="icon" type="image/png" href="{{ .Permalink }}">
+    {{- end -}}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} | {{ .Title }}{{ end }}</title>
+</head>
