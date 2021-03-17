@@ -1,0 +1,17 @@
+{{- with .Params.filters -}}
+<h6><span class="material-icons" style="vertical-align: middle;">view_in_ar</span> Filters</h6>
+<ul class="spec-list">
+    {{- range $idx, $val := . -}}
+    {{ $comppage := site.GetPage (printf "/component/%s" $val) }}
+    <li><a href="{{ $comppage.RelPermalink }}" class="text-body">
+            {{ $comppage.Params.model }}
+        </a>
+        <ul class="spec-list">
+            {{ range $comppage.Params.filtersets }}
+                <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

@@ -12,10 +12,16 @@
         <div class="col col-md-8">
             {{ .Content }}
         </div>
-        <div class="col order-first col-md-4 order-md-last mx-2 p-3 mx-md-0 p-md-0 mb-3 mb-md-0">
+        <div class="col col-md-4 mx-2 p-3 mx-md-0 p-md-0 mb-3 mb-md-0">
             <div class="row row-cols-1">
-                <div class="col-9 col-md-12 equipment-summary mx-auto mx-md-0 p-2 py-3 mb-2">
-                    {{ partial "equipment_panel_summary" . }}
+                <div class="col-10 col-md-12 equipment-summary mx-auto mx-md-0 p-4 py-3 mb-2">
+                    <h5 class="mb-3">Specifications</h5>
+                    {{ partial "specs/objectives" . }}
+                    {{ partial "specs/filters" . }}
+                    {{ partial "specs/camera" . }}
+                    {{ partial "specs/lightsources" . }}
+                    {{ partial "specs/controllers" . }}
+                    {{ partial "specs/software" . }}
                 </div>
                 <div class="col-9 col-md-12 equipment-related-links mt-2">
                     {{ partial "equipment_useful_links" . }}

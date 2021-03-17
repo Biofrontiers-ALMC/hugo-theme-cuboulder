@@ -1,0 +1,11 @@
+{{- with .Params.software -}}
+<h6><span class="material-icons" style="vertical-align: middle;">dvr</span> Software</h6>
+
+<ul class="spec-list">
+    {{- range $idx, $val := . -}}
+    <li>
+        {{ $val }}
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

@@ -1,0 +1,14 @@
+{{- with .Params.objectives -}}
+<h6><span class="material-icons" style="vertical-align: middle;">lens_blur</span> Objectives</h6>
+
+<ul class="spec-list">
+    {{- range $idx, $val := . -}}
+    {{ $comppage := site.GetPage (printf "/component/%s" $val) }}
+    <li><a href="{{ $comppage.RelPermalink }}" class="text-body">
+            {{ $comppage.Params.magnification }}
+            {{ $comppage.Params.model }}
+        </a>
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

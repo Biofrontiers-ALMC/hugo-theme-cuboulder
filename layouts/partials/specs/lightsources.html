@@ -1,0 +1,19 @@
+{{- with .Params.lightsrcs -}}
+<h6><span class="material-icons" style="vertical-align: middle;">flare</span> Light sources</h6>
+<ul class="spec-list">
+    {{- range $idx, $val := . -}}
+    {{ $comppage := site.GetPage (printf "/component/%s" $val) }}
+    <li><a href="{{ $comppage.RelPermalink }}" class="text-body">
+            {{ $comppage.Params.model }}
+        </a>
+        {{- with $comppage.Params.wavelengths -}}
+        <ul>
+            {{- range . -}}
+            <li>{{ . }}</li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

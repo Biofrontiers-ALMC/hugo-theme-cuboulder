@@ -9,7 +9,7 @@ equipment: "microscope"
 objectives: ["obj-1", "obj-2"]
 filters: ["cube-1"]
 cameras: ["camera-1"]
-lightsrcs: []
+lightsrcs: ["light-1"]
 envctrls: ["oko"]
 software: ["Windows 10", "Nikon Elements 5.20"]
 ---
