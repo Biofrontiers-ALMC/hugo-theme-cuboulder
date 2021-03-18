@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="mainnavbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {{- range .Site.Menus.main -}}
-                {{ $active := or (eq $.URL .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+                {{ $active := or (eq $.Permalink .Permalink) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
                 {{- if .HasChildren -}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -22,14 +22,14 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {{- range .Children -}}
-                            <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
+                            <li><a class="dropdown-item" href="{{ .Permalink }}">{{ .Name }}</a></li>
                             {{- end -}}
                         </ul>
                     </li>
                 {{- else -}}
                     <li class="nav-item">
                         <a class="nav-link {{ if $active }}active{{ end }}"
-                            href="{{ .URL }}">{{ .Name }}</a>
+                            href="{{ .Permalink }}">{{ .Name }}</a>
                     </li>
                 {{- end -}}
                 {{- end -}}
