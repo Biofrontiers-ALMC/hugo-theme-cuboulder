@@ -9,12 +9,14 @@ draft: false
 #    "camera" - Cameras
 #    "light-source" - Light sources
 #    "environmental-controller" - Environmental controller
-
 component: "objective"
 
-#Set manufacturer metadata 
-manufacturer: "Nikon"
-model: "AB-123"
+#Set manufacturer metadata (all component types have this)
+manufacturer: Nikon
+model: AB-123
+website: https://www.hamamatsu.com/eu/en/product/type/C14440-20UP/index.html
+
+#Fill out metadata for the type of component (you can delete the others)
 
 #Metadata for objectives
 magnification: "20"
@@ -35,4 +37,5 @@ wavelengths: ["405 nm", "445 nm", "Argon (454, 471, 488, 515 nm)"]
 #Metadata for environmental controller
 envcontrols: ["CO2", "Temperature", "Humidity"]
 
+#To add an image of the component, simply copy the image to this subfolder.
 ---
