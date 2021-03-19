@@ -7,7 +7,7 @@
 <div class="col">
     <div class="card borderless-card">
         {{- if $featimg -}}
-        {{- $cropped := $featimg.Fill "200x120" -}}
+        {{- $cropped := $featimg.Fill "300x170" -}}
         <a href="{{ .RelPermalink }}"><img src="{{ $cropped.RelPermalink }}" class="card-img-top"></a>
         {{- end -}}
         <h5 class="mt-2"><a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h5>
