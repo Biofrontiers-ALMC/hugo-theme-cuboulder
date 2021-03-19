@@ -65,7 +65,11 @@
                 {{- end -}}
             </p>
             {{- end -}}
-
+            {{- with .Params.website -}}
+            <p>
+                <b>Manufacturer's website:</b> <a href="{{ . }}">{{ . }}</a>
+            </p>    
+            {{- end -}}
         </div>
     </div>
 </div>

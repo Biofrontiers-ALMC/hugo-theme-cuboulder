@@ -1,10 +1,10 @@
 {{- with .Params.cameras -}}
-<h6><span class="material-icons" style="vertical-align: middle;">videocam</span> Detectors</h6>
+<h6><span class="material-icons">videocam</span> Detectors</h6>
 <ul class="spec-list">
     {{- range $idx, $val := . -}}
     {{ $comppage := site.GetPage (printf "/component/%s" $val) }}
     <li><a href="{{ $comppage.RelPermalink }}" class="text-body">
-            {{ $comppage.Params.model }}
+        {{ $comppage.Params.manufacturer }} {{ $comppage.Params.model }}
         </a>
         <ul>
             <li>{{ $comppage.Params.sensortype }}</li>

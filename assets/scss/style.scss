@@ -97,8 +97,8 @@ a {
     border-radius: 10px;
 }
 
-#blog-list .blog-list-row:hover {
-    box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.2);
+.equipment-summary h6 {
+    font-size: 23px;
 }
 
 .spec-list {
@@ -112,12 +112,27 @@ a {
 
 .spec-list ul {
     list-style: none;
-    color: #868686;
+    color: #5a5a5a;
     margin: 0;
     padding: 0;
     margin-left: 15px;
     font-weight: normal;
 }
+
+.feature-list {
+    list-style: none; 
+    padding: 0; 
+    margin: 0;    
+    margin-left: 30px; 
+    margin-bottom: 15px; 
+    color:#868686;
+}
+
+#blog-list .blog-list-row:hover {
+    box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+
 
 .highlight-header {
     background-color: #f1f1f1;
@@ -125,3 +140,9 @@ a {
     margin-left: -5px;
     font-weight: bold;
 }
+
+.material-icons {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
