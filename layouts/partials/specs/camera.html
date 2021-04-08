@@ -8,7 +8,7 @@
         </a>
         <ul>
             <li>{{ $comppage.Params.sensortype }}</li>
-            <li>{{ $comppage.Params.sensorsize }}</li>
+            <li>{{ $comppage.Params.sensorsize | safeHTML }}</li>
         </ul>
     </li>
     {{- end -}}

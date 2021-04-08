@@ -32,13 +32,13 @@
             {{/* Cameras */}}
             {{- else if eq .Params.component "camera" -}}
             <p>
-                <b>Sensor size:</b> {{ .Params.sensorsize }}
+                <b>Sensor size:</b> {{ .Params.sensorsize | safeHTML }}
             </p>
             <p>
                 <b>Sensor type:</b> {{ .Params.sensortype }}
             </p>
             <p>
-                <b>Pixel size:</b> {{ .Params.sensorpxsize }}
+                <b>Pixel size:</b> {{ .Params.sensorpxsize | safeHTML }}
             </p>
 
             {{/* Light sources */}}

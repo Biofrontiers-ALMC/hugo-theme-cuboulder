@@ -45,11 +45,12 @@ a {
 }
 
 .elem-hero {
-    min-height: 15em;
+    min-height: 17em;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #868686;
     background-size: cover;
+    background-position: center;
 }
 
 .elem-hero .elem-hero-inner {
@@ -67,7 +68,7 @@ a {
 
 @media (min-width: map-get($grid-breakpoints, "md")) {
     .elem-hero {
-        min-height: 15em;
+        min-height: 17em;
     }
 
     .elem-hero-inner {
@@ -132,8 +133,6 @@ a {
     box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.2);
 }
 
-
-
 .highlight-header {
     background-color: #f1f1f1;
     padding: 5px;
@@ -146,3 +145,11 @@ a {
     margin-top: -4px;
 }
 
+h1.people-list {
+    font-size: 1.25rem;
+}
+
+h2.people-list {
+    font-size: 1.1rem;
+    font-weight: lighter;
+}

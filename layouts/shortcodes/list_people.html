@@ -1,18 +1,19 @@
-<h2 class="mt-5">People</h2>
 <div class="container mt-4">
     <div class="row row-cols-1 row-cols-md-2">
         {{- range where site.RegularPages.ByWeight "Section" "people" -}}
         <div class="col">
-            <div class="row row-cols-2 row-cols-md-1">
-                <div class="col-4 mb-3 col-md-12 mx-md-auto">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1">
+                <div class="col-10 col-sm-4 mb-3 col-md-12 mx-md-auto">
                     {{ $img := .Resources.GetMatch "profile*" }}
-                    {{- $cropped := $img.Fill "300x300" -}}
+                    {{- $cropped := $img.Fill "500x500" -}}
                     <img src="{{ $cropped.Permalink }}" class="img-fluid">
                 </div>
                 <div class="col mb-4 mx-md-auto">
-                    {{ .Title }} <br>
-                    <b>{{ .Params.role }}</b><br><br>
-                    {{ .Params.room }}<br><br>
+                    <h1 class="people-list">{{ .Title }}</h1>
+                    <h2 class="people-list">{{ .Params.role }}</h2>
+                    {{- with .Params.room -}}
+                    <p>Office: {{ . }}</p>
+                    {{- end -}}
                     <a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a><br>
                     {{ .Params.phone }}
                 </div>
