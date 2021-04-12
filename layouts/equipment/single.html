@@ -3,7 +3,7 @@
 <div class="container mt-4">
     <h1 class="text-center mb-3">{{ .Title }}</h1>
     {{- if $featimg -}}
-    {{- $cropped := $featimg.Fill "800x400" -}}
+    {{- $cropped := $featimg.Fill "1100x550" -}}
     <div class="row">
         <img class="img-fluid" src="{{ $cropped.RelPermalink }}">
     </div>
