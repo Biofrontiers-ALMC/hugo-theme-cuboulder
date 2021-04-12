@@ -1,16 +1,16 @@
 {{ define "main" }}
 <div class="container mt-4">
     <h1 class="text-center mb-5">{{ .Title }}</h1>
-    <div class="row row-cols-1 {{- with .Resources.ByType "image" -}}row-cols-md-2{{- end -}}">
+    <div class="row row-cols-1 {{ with .Resources.ByType "image" -}}row-cols-md-2{{- end -}}">
         {{- with .Resources.ByType "image" -}}
-        <div class="col">
+        <div class="col ml-auto">
             {{- range first 1 . -}}
-            <img src="{{ .RelPermalink }}" class="img-fluid">
+            <img src="{{ .RelPermalink }}" class="img-fluid mx-auto d-block float-md-end">
             {{- end -}}
         </div>
         {{- end -}}
         <div class="col">
-            <h5 class="mb-4">Specifications</h5>
+            <h5 class="mt-2 mt-md-0 mb-4">Specifications</h5>
             {{- if eq .Params.component "objective" -}}
             {{/* Objective */}}
             <p>
@@ -66,8 +66,10 @@
             </p>
             {{- end -}}
             {{- with .Params.website -}}
+            {{- $url := urls.Parse . -}}
+            {{- $name := split $url.Host "." -}}
             <p>
-                <b>Manufacturer's website:</b> <a href="{{ . }}">{{ . }}</a>
+                <b>Manufacturer's website:</b> <a href="{{ . }}">{{ $url.Host }}</a>
             </p>    
             {{- end -}}
         </div>

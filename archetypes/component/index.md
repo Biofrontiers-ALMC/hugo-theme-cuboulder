@@ -32,6 +32,7 @@ sensortype: "CMOS"
 sensorpxsize: "3.45 um"
 
 #Metadata for light sources
+illumtype: fluorescence  #E.g. fluorescence, TIRF etc.
 wavelengths: ["405 nm", "445 nm", "Argon (454, 471, 488, 515 nm)"]
 
 #Metadata for environmental controller
