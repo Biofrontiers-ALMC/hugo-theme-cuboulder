@@ -19,5 +19,8 @@
     {{- with $favicon -}}
     <link rel="icon" type="image/png" href="{{ .Permalink }}">
     {{- end -}}
+    <link href="/css/lightbox.min.css" rel="stylesheet" />
+
+
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} | {{ .Title }}{{ end }}</title>
 </head>

@@ -8,7 +8,7 @@
         <div class="col">
             <div class="card borderless-card">
                 {{- $cropped := .Fill "200x120" -}}
-                <a href="{{ .RelPermalink }}"><img src="{{ $cropped.RelPermalink }}" class="card-img-top"></a>
+                <a href="{{ .RelPermalink }}" data-lightbox="images" data-title="{{ .Title }}" ><img src="{{ $cropped.RelPermalink }}" class="card-img-top"></a>
             </div>
         </div>
         {{- end -}}

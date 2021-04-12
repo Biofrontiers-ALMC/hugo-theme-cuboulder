@@ -120,6 +120,14 @@ a {
     font-weight: normal;
 }
 
+.spec-list a:link {
+
+}
+
+a.spec-link:link {
+    font-size: 1rem;
+}
+
 .feature-list {
     list-style: none; 
     padding: 0; 
@@ -153,3 +161,4 @@ h2.people-list {
     font-size: 1.1rem;
     font-weight: lighter;
 }
+
