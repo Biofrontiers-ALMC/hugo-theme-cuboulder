@@ -14,7 +14,7 @@
 <div class="container mt-5">
     <div class="row text-center">
     {{- if (and $featimg (eq ( .Params.HideBanner | default false ) false)) -}}
-{{- $scaled := $featimg.Fill "800x350" -}}
+{{- $scaled := $featimg.Fill "1200x500" -}}
 <img alt="Screenshot of ALMC website" src="{{ $scaled.RelPermalink }}" class="img-fluid mb-5">
 {{- end -}}
     </div>
