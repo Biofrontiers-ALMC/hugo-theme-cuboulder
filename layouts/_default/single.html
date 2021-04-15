@@ -3,10 +3,10 @@
 {{- $featimg := .Resources.GetMatch "featured*" -}}
 {{/* Title and header */}}
 {{- with $featimg -}}
-<div class="d-flex justify-content-center elem-hero" style="background-image: url({{.Permalink}}); background-position:center !important;">
-    <div class="align-self-center p-3" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
-        <h1 class="text-center text-white">{{ $page.Title }}</h1>
-    </div>
+<div class="d-flex justify-content-center page-featured-image" style="background-image: url({{.Permalink}});">
+        <div class="align-self-center p-3 my-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
+            <h1 class="text-center text-white">{{ $page.Title }}</h1>
+        </div>
 </div>
 {{- else -}}
 <div class="align-self-center mt-5">
