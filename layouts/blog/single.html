@@ -3,22 +3,22 @@
 {{- $featimg := .Resources.GetMatch "featured*" -}}
 
 {{/* Title and header */}}
-{{- with $featimg -}}
-    {{- $scaled := .Fill "1200x700" -}}
-    <div class="d-flex justify-content-center elem-hero" style="background-image: url({{$scaled.Permalink}});">
-        <div class="align-self-center p-3"
-            style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
-            <h1 class="text-center text-white">{{ $page.Title }}</h1>
-        </div>
-    </div>
-{{- else -}}
+
+
     <div class="align-self-center mt-5">
         <h1 class="text-center">{{ $page.Title }}</h1>
         <p class="text-center fs-4 fw-light">{{ $page.Description }}</p>
     </div>
-{{- end -}}
+
 
 <div class="container mt-5">
+    <div class="row text-center">
+    {{- if (and $featimg (eq ( .Params.HideBanner | default false ) false)) -}}
+{{- $scaled := $featimg.Fill "800x350" -}}
+<img alt="Screenshot of ALMC website" src="{{ $scaled.RelPermalink }}" class="img-fluid mb-5">
+{{- end -}}
+    </div>
+
     <div class="row">
         <div class="col-12 col-md-10 mx-auto">
             {{- with .Params.imagecaption -}}
@@ -26,7 +26,7 @@
                 Banner image: {{ . | markdownify }}
             </div>
             {{- end -}}
-            <h3>{{ dateFormat "January 02, 2006" .Date }}</h3>
+            <h4>{{ dateFormat "January 02, 2006" .Date }}</h4>
             {{- with .Params.authors -}}
             {{- $nauthors := len . -}}
             <p>By
