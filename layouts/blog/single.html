@@ -3,7 +3,7 @@
 {{- $featimg := .Resources.GetMatch "featured*" -}}
 
 {{/* Header image */}}
-{{- if (and $featimg (eq ( .Params.HideBanner | default false ) false)) -}}
+{{- if (and $featimg (eq ( .Params.hidebanner | default false ) false)) -}}
 <div class="w-100">
     {{- $scaled := $featimg.Fill "1500x500" -}}
     <img alt="Banner image" src="{{ $scaled.RelPermalink }}" class="w-100 mb-1">
