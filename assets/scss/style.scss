@@ -60,10 +60,35 @@ a {
     top: 1em;
 }
 
-.elem-hero .elem-hero-inner .btn-primary {
+.elem-hero .elem-hero-inner .btn-secondary {
     background-color: #CFB87C;
-    border-color: black;
+    border-color: #CFB87C;
     font-weight: bold;
+}
+
+.elem-hero .elem-hero-inner .btn-secondary:hover {
+    background-color: #b9a46d;
+    border-color: #b9a46d;
+}
+
+.announcements {
+    background-color: #1D1E20;
+    color: white;
+}
+
+.announcements-card {
+    background-color: #1D1E20;
+}
+
+.announcements-card .btn-secondary {
+    background-color: #CFB87C;
+    border-color: #CFB87C;
+    font-weight: bold;
+}
+
+.announcements-card .btn-secondary:hover {
+    background-color: #b9a46d;
+    border-color: #b9a46d;
 }
 
 @media (min-width: map-get($grid-breakpoints, "md")) {
@@ -90,12 +115,17 @@ a {
 }
 
 .page-image-caption {
-    font-size: small;
+    font-size: smaller;
+    color: #b3b3b3;
 }
 
 .equipment-summary {
     background-color: #F3F3F3;
     border-radius: 10px;
+}
+
+.caption {
+    font-size: small;
 }
 
 .equipment-summary h6 {

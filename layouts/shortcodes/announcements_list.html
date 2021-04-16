@@ -1,0 +1,27 @@
+<div class="w-100 announcements py-1">
+<div class="container my-4">
+    <h2 class="text-center mb-5">Announcements</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+        {{- range where .Site.RegularPages.ByWeight "Section" "announcements" -}}
+        {{- $featimg := .Resources.GetMatch "featured*" -}}
+        <div class="col">
+            <div class="card announcements-card">
+                {{- if $featimg -}}
+                {{- $cropped := $featimg.Fill "400x240" -}}
+                <img src="{{ $cropped.RelPermalink }}" class="card-img-top mb-2">
+                {{- end -}}
+                <div class="card-body">
+                    <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-text">{{ .Content }}</p>
+                    {{- if .Params.links -}}
+                    {{- range .Params.links -}}
+                    <a href="{{ .href }}" class="btn btn-secondary me-1">{{ .title }}</a>
+                    {{- end -}}
+                    {{- end -}}
+                </div>
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>
+</div>

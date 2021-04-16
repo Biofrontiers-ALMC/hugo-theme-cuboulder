@@ -1,0 +1,15 @@
+{{- $id := .Get "title" | truncate 15 | urlize -}}
+{{- $hid := printf "heading_%s" $id  -}}
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="{{ $hid }}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $id }}" aria-expanded="false" aria-controls="{{ $id }}">
+        {{ .Get "title" }}
+      </button>
+    </h2>
+    <div id="{{ $id }}" class="accordion-collapse collapse" aria-labelledby="{{ $hid }}" data-bs-parent="#bsaccordion">
+      <div class="accordion-body">
+        {{ .Inner | markdownify }}
+      </div>
+    </div>
+  </div>

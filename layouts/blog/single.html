@@ -2,31 +2,29 @@
 {{- $page := . -}}
 {{- $featimg := .Resources.GetMatch "featured*" -}}
 
-{{/* Title and header */}}
-
-
-    <div class="align-self-center mt-5">
-        <h1 class="text-center">{{ $page.Title }}</h1>
-        <p class="text-center fs-4 fw-light">{{ $page.Description }}</p>
-    </div>
-
-
-<div class="container mt-5">
-    <div class="row text-center">
-    {{- if (and $featimg (eq ( .Params.HideBanner | default false ) false)) -}}
-{{- $scaled := $featimg.Fill "1200x500" -}}
-<img alt="Screenshot of ALMC website" src="{{ $scaled.RelPermalink }}" class="img-fluid mb-5">
+{{/* Header image */}}
+{{- if (and $featimg (eq ( .Params.HideBanner | default false ) false)) -}}
+<div class="w-100">
+    {{- $scaled := $featimg.Fill "1500x500" -}}
+    <img alt="Banner image" src="{{ $scaled.RelPermalink }}" class="w-100 mb-1">
+</div>
+{{- with .Params.imagecaption -}}
+<div class="page-image-caption mb-1 ms-3">
+    Banner image: {{ . | markdownify }}
+</div>            
 {{- end -}}
-    </div>
+{{- end -}}
 
+<div class="container mt-1">
     <div class="row">
         <div class="col-12 col-md-10 mx-auto">
-            {{- with .Params.imagecaption -}}
-            <div class="page-image-caption mb-4">
-                Banner image: {{ . | markdownify }}
+            <div class="align-self-center mt-5">
+                <h1>{{ $page.Title }}</h1>
+                {{- with $page.Description -}}
+                <p class="fs-6 fw-light">{{ . }}</p>
+                {{- end -}}
             </div>
-            {{- end -}}
-            <h4>{{ dateFormat "January 02, 2006" .Date }}</h4>
+            <h5>{{ dateFormat "January 02, 2006" .Date }}</h5>
             {{- with .Params.authors -}}
             {{- $nauthors := len . -}}
             <p>By
