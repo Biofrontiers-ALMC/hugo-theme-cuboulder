@@ -31,7 +31,7 @@ a {
 
 #site-footer {
     color: white;
-    font-size: small;
+    font-size: medium;
 }
 
 #site-footer-beboulder {
@@ -42,6 +42,13 @@ a {
 
 #site-footer a {
     color: #CFB87C;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: ease, ease, ease;
+}
+
+#site-footer a:hover {
+    color: #ffffff;
+
 }
 
 .elem-hero {
