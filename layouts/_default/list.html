@@ -1,3 +1,22 @@
 {{ define "main" }}
-    {{ .Content }}
+<div class="align-self-center mt-5">
+    <h1 class="text-center">{{ .Title }}</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-xl-8 mx-auto page-content">
+            {{ .Content }}
+
+            {{- with .RegularPages -}}
+            <ul>
+                {{- range . -}}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{- end -}}
+            </ul>
+            {{- end -}}
+        </div>
+    </div>
+
+    
 {{ end }}
