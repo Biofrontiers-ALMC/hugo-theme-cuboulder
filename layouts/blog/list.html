@@ -13,7 +13,7 @@
                 </div>
                 {{- end -}}
                 <div class="col-12 mt-2 col-md-8 mt-md-0">
-                    <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Summary }}</a>
+                    <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Description | default .Summary }}</a>
                 </div>
             </div>
         </div>
