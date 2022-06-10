@@ -7,7 +7,7 @@
             <div class="row row-cols-1 row-cols-md-2">
                 {{- $featimg := .Resources.GetMatch "featured*" -}}
                 {{- if $featimg -}}
-                {{- $scaled := $featimg.Fill "300x200" -}}
+                {{- $scaled := $featimg.Fill "300x200 Center" -}}
                 <div class="col-12 col-md-3">            
                     <a href="{{ .RelPermalink }}"><img src="{{ $scaled.RelPermalink }}" class="img-fluid my-auto ml-auto"></a>
                 </div>
