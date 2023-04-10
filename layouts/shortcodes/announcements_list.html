@@ -7,7 +7,7 @@
         <div class="col">
             <div class="card announcements-card">
                 {{- if $featimg -}}
-                {{- $cropped := $featimg.Fill "400x240" -}}
+                {{- $cropped := $featimg.Fill "400x240 Center" -}}
                 <img src="{{ $cropped.RelPermalink }}" class="card-img-top mb-2">
                 {{- end -}}
                 <div class="card-body">
