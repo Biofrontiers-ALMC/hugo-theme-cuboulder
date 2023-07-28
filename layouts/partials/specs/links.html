@@ -1,0 +1,16 @@
+{{- with .Params.links -}}
+<h6><span class="material-icons">videocam</span> Detectors</h6>
+<ul class="spec-list">
+    {{- range $idx, $val := . -}}
+    {{ $comppage := site.GetPage (printf "/component/%s" $val) }}
+    <li><a href="{{ $comppage.RelPermalink }}" class="spec-link">
+        {{ $comppage.Params.manufacturer }} {{ $comppage.Params.model }}
+        </a>
+        <ul>
+            <li>{{ $comppage.Params.sensortype }}</li>
+            <li>{{ $comppage.Params.sensorsize | safeHTML }}</li>
+        </ul>
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}
