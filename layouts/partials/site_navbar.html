@@ -6,10 +6,10 @@
 </nav>
 <nav class="navbar navbar-expand-xl navbar-dark" style="background-color: #000000;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnavbar" aria-controls="mainnavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> Menu
         </button>
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         <div class="collapse navbar-collapse" id="mainnavbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {{- range .Site.Menus.main -}}
@@ -35,5 +35,6 @@
                 {{- end -}}
             </ul>
         </div>
-    </div>
+        <a href="/contact-us/" class="btn btn-primary">Contact</a>
+    </div>    
 </nav>
