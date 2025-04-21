@@ -1,0 +1,8 @@
+{{- with .Params.features -}}
+<h6><span class="material-icons">filter_none</span> Other features</h6>
+<ul class="feature-list">
+    {{- range $idx, $val := . -}}
+    <li>{{ $val }}</li>
+    {{- end -}}
+</ul>
+{{- end -}}

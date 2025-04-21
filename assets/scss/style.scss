@@ -1,0 +1,211 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+
+
+a {
+    text-decoration: none;
+}
+
+.navbar-top {
+    height: 56px;
+    padding: 0;
+}
+
+.navbar-main {
+    height: 85px;
+}
+
+.navbar-brand {
+    font-size: medium;
+}
+
+.navbar-top-logo {
+    height: 25px;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.site-footer-bar {
+    background-color: black;
+}
+
+#site-footer {
+    color: white;
+    font-size: medium;
+}
+
+#site-footer-beboulder {
+    min-width: 1in; 
+    max-width: 300px;
+    padding-bottom: 5px;
+}
+
+#site-footer a {
+    color: #CFB87C;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: ease, ease, ease;
+}
+
+#site-footer a:hover {
+    color: #ffffff;
+
+}
+
+.elem-hero {
+    min-height: 19em;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #868686;
+    background-size: cover;
+    background-position: center;
+}
+
+.elem-hero .elem-hero-inner {
+    position: relative;
+    background-color: #1D1E20;
+    color: white;
+    top: 1em;
+}
+
+.elem-hero .elem-hero-inner .btn-secondary {
+    background-color: #CFB87C;
+    border-color: #CFB87C;
+    font-weight: bold;
+}
+
+.elem-hero .elem-hero-inner .btn-secondary:hover {
+    background-color: #b9a46d;
+    border-color: #b9a46d;
+}
+
+.announcements {
+    background-color: #1D1E20;
+    color: white;
+}
+
+.announcements-card {
+    background-color: #1D1E20;
+    border-color: #1D1E20;
+}
+
+.announcements-card .btn-secondary {
+    background-color: #CFB87C;
+    border-color: #CFB87C;
+    font-weight: bold;
+}
+
+.announcements-card .btn-secondary:hover {
+    background-color: #b9a46d;
+    border-color: #b9a46d;
+}
+
+@media (min-width: map-get($grid-breakpoints, "md")) {
+    .elem-hero {
+        min-height: 17em;
+    }
+
+    .elem-hero-inner {
+        max-width: 500px;
+        margin-left: 15%;
+    }
+}
+
+.borderless-card {
+    object-fit: scale-down;
+    border: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+.borderless-card:hover {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.page-image-caption {
+    font-size: smaller;
+    color: #b3b3b3;
+}
+
+.equipment-summary {
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+
+.caption {
+    font-size: small;
+}
+
+.equipment-summary h6 {
+    font-size: 23px;
+}
+
+.spec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.spec-list ul {
+    list-style: none;
+    color: #5a5a5a;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+.spec-list a:link {
+
+}
+
+a.spec-link:link {
+    font-size: 1rem;
+}
+
+.feature-list {
+    list-style: none; 
+    padding: 0; 
+    margin: 0;    
+    margin-left: 30px; 
+    margin-bottom: 15px; 
+    color:#868686;
+}
+
+#blog-list .blog-list-row:hover {
+    box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.highlight-header {
+    background-color: #f1f1f1;
+    padding: 5px;
+    margin-left: -5px;
+    font-weight: bold;
+}
+
+.material-icons {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+h1.people-list {
+    font-size: 1.25rem;
+}
+
+h2.people-list {
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.page-featured-image {
+    background: no-repeat center center;
+    background-color: #6c757d;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+}

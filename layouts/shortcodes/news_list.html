@@ -1,0 +1,25 @@
+<div class="container mt-5 mb-3">
+    <h2 class="text-center">News</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+        {{- range first 6 (where .Site.RegularPages "Section" "blog") -}}
+        {{- $featimg := .Resources.GetMatch "featured*" -}}
+        <div class="col">
+            <div class="card borderless-card">
+                {{- if $featimg -}}
+                {{- $cropped := $featimg.Fill "400x240 Center" -}}
+                <a href="{{ .RelPermalink }}"><img src="{{ $cropped.RelPermalink }}" class="card-img-top mb-2"></a>
+                {{- end -}}
+                <h5><a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h5>
+                {{- if not $featimg -}}
+                <a href="{{ .RelPermalink }}" class="text-decoration-none text-body">{{ .Summary | truncate 150 }}</a>
+                {{- end -}}
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">
+        <a href="{{ "/blog/" | relURL }}" class="btn btn-outline-secondary">See all news</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{{- if .Params.operatingsystem -}}
+<h6><span class="material-icons" style="vertical-align: middle;">desktop_windows</span> Operating System</h6>
+
+<ul class="spec-list">
+    <li>{{ .Params.operatingsystem }}
+    </li>
+</ul>
+{{- end -}}
+
+{{- if .Params.cpu -}}
+<h6><span class="material-icons" style="vertical-align: middle;">memory</span> CPU</h6>
+
+<ul class="spec-list">
+    <li>{{ .Params.cpu }}
+    </li>
+</ul>
+{{- end -}}
+
+{{- if .Params.ram -}}
+<h6><span class="material-icons" style="vertical-align: middle;">memory</span> RAM</h6>
+
+<ul class="spec-list">
+    <li>{{ .Params.ram }}
+    </li>
+</ul>
+{{- end -}}
+
+{{- if .Params.graphicscard -}}
+<h6><span class="material-icons" style="vertical-align: middle;">wallpaper</span> Graphics Card</h6>
+
+<ul class="spec-list">
+    <li>{{ .Params.graphicscard }}
+    </li>
+</ul>
+{{- end -}}
+
+{{- if .Params.harddrives -}}
+<h6><span class="material-icons" style="vertical-align: middle;">storage</span> Hard Drives</h6>
+
+<ul class="spec-list">
+    {{- range .Params.harddrives -}}
+    <li>{{ . }}
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

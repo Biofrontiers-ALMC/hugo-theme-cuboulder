@@ -1,0 +1,17 @@
+{{- $subdir := .Get 0 -}}
+{{- $imglist := .Page.Resources.Match (print $subdir "/*.jpg") -}}
+
+{{- with $imglist -}}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+    {{- range . -}}
+        <div class="col">
+            <div class="card borderless-card">
+                {{- $cropped := .Fill "200x120" -}}
+                <a href="{{ .RelPermalink }}" data-lightbox="{{ $subdir }}" data-title="{{ .Title }}" ><img src="{{ $cropped.RelPermalink }}" class="card-img-top"></a>
+            </div>
+        </div>
+    {{- end -}}
+</div>
+</div>
+{{- end -}}

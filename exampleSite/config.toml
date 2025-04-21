@@ -1,0 +1,63 @@
+baseURL = "https://advancedimaging.colorado.edu/"
+languageCode = "en-us"
+title = "Advanced Light Microscopy Core"
+theme = "hugo-theme-cuboulder"
+themesDir = "../.."
+   
+# Configure the main menu
+[menu]
+
+    [[menu.main]]
+        identifier = "services"
+        name = "Services"
+        url = "/services/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "equipment"
+        name = "Equipment"
+        url = "/equipment/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "resources"
+        name = "User Resources"
+        url = "/resources/"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "page-1"
+        name = "Page 1"
+        parent = "resources"
+        url = "/resources/page-1"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "page-2"
+        name = "Page 2"
+        parent = "resources"
+        url = "/resources/page-2"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "news"
+        name = "News"
+        url = "/blog/"
+        weight = 4
+
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact/"
+        weight = 5
+       
+[outputs]
+  home = ["HTML", "RSS"]
+
+#The theme requires the following taxonomies
+[taxonomies]
+    tag = "tags"
+    author = "authors"
+    person = "people"
+    component = "components"
+    equipment = "equipment"
